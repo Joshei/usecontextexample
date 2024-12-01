@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from './createdContext';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './test-context';
 
 
@@ -9,6 +8,8 @@ import About from './test-context';
     const { state, setState} = useContext(AppContext);
     // Step 1: Set up state to store the fetched data
     const [characters, setCharacters] = useState([]);
+
+    
   
   // Step 2: Fetch data when the component mounts
   useEffect(() => {
@@ -19,6 +20,7 @@ import About from './test-context';
         setCharacters(data.results); // Store the list of characters in state
       })
       .catch(error => {
+
         console.error('Error fetching data:', error);
       });
   }, []); // Empty dependency array to fetch data only once when the component mounts
@@ -42,12 +44,12 @@ import About from './test-context';
   );
 };
 
-    <BrowserRouter>
-        <Routes>
+    // <BrowserRouter>
+    //     <Routes>
             
-            <Route path="/test-context" element={<About />} />
-        </Routes>
-    </BrowserRouter>
+    //         <Route path="/test-context" element={<About />} />
+    //     </Routes>
+    // </BrowserRouter>
 
 
 export default StarWarsCharacters;
