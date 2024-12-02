@@ -1,9 +1,14 @@
-import React from "react";
+import {React, useEffect} from "react";
 import {Link} from 'react-router-dom';
 
 const Test = () => {
 
-    
+    useEffect(() => {
+
+        //  LETS CONVERT THIS RETURN/RENDER TO PAGES CONTEXT AND KEEP APP AS THE LOADER
+
+    }, []); 
+
     return (
     
     <div>

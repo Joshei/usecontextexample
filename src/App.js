@@ -13,6 +13,7 @@ import Test2 from './Test2.jsx';
   
   // Step 2: Fetch data when the component mounts
   useEffect(() => {
+   
     // Fetch data from the Star Wars API
     fetch('https://swapi.dev/api/people/')
       .then(response => response.json())
@@ -29,17 +30,11 @@ import Test2 from './Test2.jsx';
 
   //Add a listing page
  
-  
+    console.log("At App")
   return (
-    <div>
-
-
-
-
-
-        
-      <h1>Star Wars Characters</h1>
-      {/* Step 3: Map over the characters array and render the data */}
+  /*  <div>
+    <h1>Star Wars Characters</h1>
+     
       <ul>
         {characters.map((character, index) => (
           <li key={index}>
@@ -50,14 +45,17 @@ import Test2 from './Test2.jsx';
           </li>
         ))}
       </ul>
-      
+     
+*/
+        <div>
       <BrowserRouter>
        
         <Routes>
             <Route path="/" element={<Test/>} />
-            <Route path="/test" element={<Test/>} />
+            
             <Route path="/test2" element={<Test2/>} />
            
+            
         </Routes>
     </BrowserRouter>
 
