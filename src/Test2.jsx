@@ -15,7 +15,7 @@ import Test from './Test.jsx';
          useEffect(() => {
 
          }, []);
-         
+
      
       
       return (
@@ -26,7 +26,7 @@ import Test from './Test.jsx';
     
     
             
-          <h1>Star Wars Characters - CONTEXT</h1>
+          <h1>Star Wars Characters - CONTEXT PAGE</h1>
           {/* Step 3: Map over the characters array and render the data */}
           <ul>
             {characters.map((character, index) => (
@@ -48,7 +48,7 @@ import Test from './Test.jsx';
     
     <div>
         
-        <h1>On List Page</h1>
+       
         <Link to="/">Go to Home Page</Link>
         
     </div>
