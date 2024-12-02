@@ -10,8 +10,9 @@ const Test = () => {
 
         
 
-        <h1>Context Page</h1>
-        <Link to="/test2">Go to Context Page</Link>
+        <h1>On Home Page</h1>
+        <Link to="/test2">Go to Links Page</Link>
+        
         
     </div>
     );

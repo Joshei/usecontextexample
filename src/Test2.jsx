@@ -7,7 +7,7 @@ const Test2 = () => {
     
     <div>
         
-       
+        <h1>On Links Page</h1>
         <Link to="/">Go to Home Page</Link>
         
     </div>

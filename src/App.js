@@ -1,6 +1,6 @@
 import { React, useContext, useState, useEffect } from 'react';
 import { AppContext } from './createdContext.jsx';
-import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Router, Routes, Route, Link } from 'react-router-dom';
 import Test from './Test.jsx';
 import Test2 from './Test2.jsx';
 
@@ -25,11 +25,21 @@ import Test2 from './Test2.jsx';
       });
   }, []); // Empty dependency array to fetch data only once when the component mounts
   
+
+
+  //Add a listing page
+ 
+  
   return (
     <div>
+
+
+
+
+
         
       <h1>Star Wars Characters</h1>
-      {/* Step 3: Map over the characters array and render the data *///}
+      {/* Step 3: Map over the characters array and render the data */}
       <ul>
         {characters.map((character, index) => (
           <li key={index}>
@@ -45,7 +55,9 @@ import Test2 from './Test2.jsx';
        
         <Routes>
             <Route path="/" element={<Test/>} />
+            <Route path="/test" element={<Test/>} />
             <Route path="/test2" element={<Test2/>} />
+           
         </Routes>
     </BrowserRouter>
 
