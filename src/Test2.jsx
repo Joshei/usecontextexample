@@ -9,14 +9,8 @@ import Test from './Test.jsx';
     const Test2 = () => {
         const { state, setState} = useContext(AppContext);
         // Step 1: Set up state to store the fetched data
-        const [characters, setCharacters] = useState([]);
+        //const [characters, setCharacters] = useState([]);
       
-
-         useEffect(() => {
-
-         }, []);
-
-     
       
       return (
         <div>
@@ -29,12 +23,10 @@ import Test from './Test.jsx';
           <h1>Star Wars Characters - CONTEXT PAGE</h1>
           {/* Step 3: Map over the characters array and render the data */}
           <ul>
-            {characters.map((character, index) => (
+            { state && state.map((character, index) => (
               <li key={index}>
-                <h3>{character.name}</h3>
-                <p>Height: {character.height}</p>
-                <p>Mass: {character.mass}</p>
-                <p>Gender: {character.gender}</p>
+                <h3></h3>
+                {character.user}
               </li>
             ))}
           </ul>
