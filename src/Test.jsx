@@ -11,7 +11,7 @@ const Test = () => {
         
 
         <h1>On Home Page</h1>
-        <Link to="/test2">Go to Links Page</Link>
+        <Link to="/test2">Go to Page With Context Listing</Link>
         
         
     </div>
