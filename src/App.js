@@ -29,7 +29,7 @@ import Test2 from './Test2.jsx';
     <div>
         
       <h1>Star Wars Characters</h1>
-      {/* Step 3: Map over the characters array and render the data */}
+      {/* Step 3: Map over the characters array and render the data *///}
       <ul>
         {characters.map((character, index) => (
           <li key={index}>
