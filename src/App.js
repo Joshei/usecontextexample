@@ -1,15 +1,15 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from './createdContext';
-import About from './test-context';
+import { React, useContext, useState, useEffect } from 'react';
+import { AppContext } from './createdContext.jsx';
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import Test from './Test.jsx';
+import Test2 from './Test2.jsx';
 
-
+    
 // export default ChildComponent;
     const StarWarsCharacters = () => {
     const { state, setState} = useContext(AppContext);
     // Step 1: Set up state to store the fetched data
     const [characters, setCharacters] = useState([]);
-
-    
   
   // Step 2: Fetch data when the component mounts
   useEffect(() => {
@@ -20,15 +20,15 @@ import About from './test-context';
         setCharacters(data.results); // Store the list of characters in state
       })
       .catch(error => {
-
+        
         console.error('Error fetching data:', error);
       });
   }, []); // Empty dependency array to fetch data only once when the component mounts
   
   return (
     <div>
+        
       <h1>Star Wars Characters</h1>
-      <a href="/anotherPage.js">Go to Local Page</a>
       {/* Step 3: Map over the characters array and render the data */}
       <ul>
         {characters.map((character, index) => (
@@ -40,16 +40,30 @@ import About from './test-context';
           </li>
         ))}
       </ul>
+      
+      <BrowserRouter>
+       
+        <Routes>
+            <Route path="/" element={<Test/>} />
+            <Route path="/test2" element={<Test2/>} />
+        </Routes>
+    </BrowserRouter>
+
+        <div>
+      
+      </div>
+
+
     </div>
-  );
+
+
+
+
+);
+
 };
 
-    // <BrowserRouter>
-    //     <Routes>
-            
-    //         <Route path="/test-context" element={<About />} />
-    //     </Routes>
-    // </BrowserRouter>
+
 
 
 export default StarWarsCharacters;
