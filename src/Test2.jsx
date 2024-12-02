@@ -23,14 +23,16 @@ import Test from './Test.jsx';
           <h1>Star Wars Characters - CONTEXT PAGE</h1>
           {/* Step 3: Map over the characters array and render the data */}
           <ul>
-            { state && state.map((character, index) => (
+            {state.map((character, index) => (
               <li key={index}>
-                <h3></h3>
-                {character.user}
+                <h3>{character.name}</h3>
+                <p>Height: {character.height}</p>
+                <p>Mass: {character.mass}</p>
+                <p>Gender: {character.gender}</p>
               </li>
             ))}
           </ul>
-          
+
 
 
 

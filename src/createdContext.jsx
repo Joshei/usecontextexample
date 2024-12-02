@@ -5,10 +5,10 @@ const AppContext = createContext();
 
 // Provider Component
 const AppProvider = ({ children }) => {
-    const [state, setState] = useState({
+    const [state, setState] = useState([{
         user: null, // Example state
         theme: 'light',
-    });
+    }]);
 
     // Optional: Add utility functions
     const toggleTheme = () => {
