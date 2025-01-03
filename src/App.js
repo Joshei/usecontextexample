@@ -6,6 +6,8 @@ import Test2 from './Test2.jsx';
 
     const StarWarsCharacters = () => {
     const { state, setState} = useContext(AppContext);
+    const [loading, setLoading] = useState(true); // To track loading status
+
     useEffect(() => {
    // Fetch data from the Star Wars API
     fetch('https://swapi.dev/api/people/')
@@ -16,8 +18,14 @@ import Test2 from './Test2.jsx';
       .catch(error => {
         
         console.error('Error fetching data:', error);
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
+      ;
   }, []); // Empty dependency array to fetch data only once when the component mounts
+
+  if (loading) return <p>Loading...</p>;
   return (
          <div>
         <BrowserRouter>
