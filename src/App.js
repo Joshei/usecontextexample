@@ -10,7 +10,7 @@ import Test2 from './Test2.jsx';
 
     useEffect(() => {
    // Fetch data from the Star Wars API
-    fetch('https://swapi.dev/api/people/')
+    fetch("https://swapi.dev/api/people/")
       .then(response => response.json())
       .then(data => {
         setState(data.results); // Store the list of characters in state
