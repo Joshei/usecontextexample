@@ -8,22 +8,50 @@ import Test2 from './Test2.jsx';
     const { state, setState} = useContext(AppContext);
     const [loading, setLoading] = useState(true); // To track loading status
 
-    useEffect(() => {
-   // Fetch data from the Star Wars API
-    fetch("https://swapi.dev/api/people/")
-      .then(response => response.json())
-      .then(data => {
-        setState(data.results); // Store the list of characters in state
-      })
-      .catch(error => {
+
+
+  //   useEffect(() => {
+  //  // Fetch data from the Star Wars API
+  //   fetch("https://swapi.dev/api/people/")
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setState(data.results); // Store the list of characters in state
+  //     })
+  //     .catch(error => {
         
-        console.error('Error fetching data:', error);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
-      ;
-  }, []); // Empty dependency array to fetch data only once when the component mounts
+  //       console.error('Error fetching data:', error);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     })
+  //     ;
+  // }, []); // Empty dependency array to fetch data only once when the component mounts
+
+  /////
+
+  useEffect(() => {
+
+  fetch('https://catfact.ninja/fact')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('People data:', data);
+        setState(data.results)
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }, []);
+
+
+  /////
+
+
 
   if (loading) return <p>Loading...</p>;
   return (
